@@ -38,5 +38,13 @@
             android:id="@+id/afspraak_list_location"/>
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/afspraak_list_picture"
+        android:layout_gravity="end"
+        android:layout_marginRight="0dp"/>
+
+
 
 </LinearLayout>

@@ -1,12 +1,15 @@
 package com.example.stijn.afsprakenvanengelgem;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -47,6 +50,8 @@ public class AppointmentArrayAdapter extends ArrayAdapter<Appointment>{
         View view = inflater.inflate(
                 //ergens verkeerde aanroeping juiste waarde daardoor verkeerde verwerking waarde
                 R.layout.afspraak_list_item, null);
+        ImageView imageView = (ImageView) view.findViewById(R.id.afspraak_list_picture);
+        imageView.setImageResource(appointment.getImg_id());
 
         TextView textView = (TextView) view.findViewById(R.id.afspraak_list_date);
         textView.setText(""+appointment.getDay()+"/"+appointment.getMonth()+"/"+appointment.getYear());

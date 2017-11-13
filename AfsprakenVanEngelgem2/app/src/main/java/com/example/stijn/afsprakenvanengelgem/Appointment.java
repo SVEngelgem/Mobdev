@@ -11,6 +11,7 @@ public class Appointment {
 
     /* Id */
     private int id;
+    private int img_id;
 
     /* Time slot */
     private int day;
@@ -19,12 +20,13 @@ public class Appointment {
     private int hour;
     private int minute;
 
+
     /* Contact */
     private String contactName;
     private String location;
     private String reason;
 
-    public Appointment(int id, int day, int month, int year, int hour, int minute, String contactName, String location, String reason) {
+    public Appointment(int id,int img_id, int day, int month, int year, int hour, int minute, String contactName, String location, String reason) {
         this.id = id;
         this.day = day;
         this.month = month;
@@ -34,6 +36,7 @@ public class Appointment {
         this.contactName = contactName;
         this.location = location;
         this.reason = reason;
+        this.img_id = img_id;
     }
 
     public long getTime() {
@@ -113,4 +116,8 @@ public class Appointment {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    public int getImg_id(){ return img_id; }
+
+    public void setImg_id(int img_id){ this.img_id = img_id; }
 }
