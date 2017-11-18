@@ -25,8 +25,9 @@ public class Appointment {
     private String contactName;
     private String location;
     private String reason;
+    private String location_Geg;
 
-    public Appointment(int id,int img_id, int day, int month, int year, int hour, int minute, String contactName, String location, String reason) {
+    public Appointment(int id,int img_id, int day, int month, int year, int hour, int minute, String contactName, String location, String reason,String location_Geg) {
         this.id = id;
         this.day = day;
         this.month = month;
@@ -37,6 +38,7 @@ public class Appointment {
         this.location = location;
         this.reason = reason;
         this.img_id = img_id;
+        this.location_Geg = location_Geg;
     }
 
     public long getTime() {
@@ -117,7 +119,19 @@ public class Appointment {
         this.reason = reason;
     }
 
-    public int getImg_id(){ return img_id; }
+    public int getImg_id(){
+        return img_id;
+    }
 
-    public void setImg_id(int img_id){ this.img_id = img_id; }
+    public void setImg_id(int img_id){
+        this.img_id = img_id;
+    }
+
+    public String getLocation_Geg() {
+        return location_Geg;
+    }
+
+    public void setLocation_Geg(String location_Geg){
+        this.location_Geg = location_Geg;
+    }
 }

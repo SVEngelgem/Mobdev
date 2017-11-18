@@ -1,9 +1,12 @@
 package com.example.stijn.afsprakenvanengelgem;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,5 +38,19 @@ public class DetailActivity extends AppCompatActivity {
         detail_location.setText(appointment.getLocation());
         detail_reason.setText(appointment.getReason());
         detail_profilepic.setImageResource(appointment.getImg_id());
+
+        Button button = (Button)findViewById(R.id.intent_button);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                //makkelijk gevonden via google maps documentatie
+                //https://developers.google.com/maps/documentation/urls/android-intents
+                //https://developers.google.com/maps/documentation/urls/guide#universal-cross-platform-syntax
+                String location = appointment.getLocation_Geg();
+                Uri locatie = Uri.parse(location);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, locatie);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
     }
 }
