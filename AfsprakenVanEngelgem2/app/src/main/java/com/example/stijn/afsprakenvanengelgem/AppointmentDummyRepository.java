@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class AppointmentDummyRepository implements IAppointmentsRepository {
-
+        //vragen wat deze juist doet met interface
         private static IAppointmentsRepository repo = null;
 
     public static IAppointmentsRepository getInstance() {
