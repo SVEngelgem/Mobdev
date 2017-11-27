@@ -1,4 +1,5 @@
 package com.example.stijn.appoftheyear;
+import io.realm.RealmObject;
 
 /**
  * Created by stijn on 19/11/2017.
