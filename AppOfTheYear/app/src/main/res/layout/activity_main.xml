@@ -9,14 +9,17 @@
     <Button
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/main_new_day"/>
+        android:text="@string/main_new_day"
+        android:id="@+id/buttonNewDay"/>
     <Button
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/main_continue_day"/>
+        android:text="@string/main_continue_day"
+        android:id="@+id/buttonContinueday"/>
     <Button
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/main_beverage_list"/>
+        android:text="@string/main_beverage_list"
+        android:id="@+id/buttoneditList"/>
 
 </LinearLayout>

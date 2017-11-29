@@ -11,7 +11,7 @@ public class Dranklijst {
 
     //controle van interface? navragen in vergelijking met appointment opdracht
 
-    public List<Drank> getDrankLijst(){
+    /*public List<Drank> getDrankLijst(){
         List<Drank> Dranken = new ArrayList<>();
 
         Dranken.add(new FrisDrank("cola", 1.7));
@@ -21,5 +21,5 @@ public class Dranklijst {
         Dranken.add(new Whiskey("Belveney", 6,"zacht",20));
 
         return Dranken;
-    }
+    }*/
 }
