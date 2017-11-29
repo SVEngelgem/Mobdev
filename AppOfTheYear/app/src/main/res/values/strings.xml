@@ -3,4 +3,6 @@
     <string name="main_new_day">Start New Day</string>
     <string name="main_continue_day">Continue Day</string>
     <string name="main_beverage_list">Edit Beverage List</string>
+    <string name="addbeer">add beverage</string>
+
 </resources>
