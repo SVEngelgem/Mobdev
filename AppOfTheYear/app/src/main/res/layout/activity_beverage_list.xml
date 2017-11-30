@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.stijn.appoftheyear.BeverageListActivity"
     android:orientation="vertical">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            android:text="@string/addbeer"
-            android:id="@+id/beverage_add_button"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:text="@string/addbeer"
+        android:id="@+id/beverage_add_button"/>
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

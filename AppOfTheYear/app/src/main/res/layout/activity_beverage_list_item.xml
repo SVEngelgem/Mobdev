@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:gravity="end">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/beverage_list_item_name"/>
-    <TextView
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/beverage_list_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="prijs" />
+
+        <TextView
+            android:id="@+id/beverage_list_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="naam" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/beverage_list_item_price"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/beverage_list_item_button_remove"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="remove" />
+
+        <Button
+            android:id="@+id/beverage_list_item_button_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="modify" />
+    </LinearLayout>
+
 </LinearLayout>

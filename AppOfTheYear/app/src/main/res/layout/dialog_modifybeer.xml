@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/beverage_add_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/addbeer"/>
+        android:layout_gravity="center" />
 
     <EditText
         android:id="@+id/beverage_add_button_name"
@@ -27,7 +27,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addbeer"
         android:id="@+id/beverage_add_button_button"/>
 
 </LinearLayout>
