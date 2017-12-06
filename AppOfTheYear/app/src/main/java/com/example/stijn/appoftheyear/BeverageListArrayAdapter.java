@@ -34,10 +34,10 @@ public class BeverageListArrayAdapter extends ArrayAdapter<Consumptie>{
         View view = inflater.inflate(R.layout.activity_beverage_list_item,null);
 
         final TextView naam = (TextView) view.findViewById(R.id.beverage_list_item_name);
-        naam.setText(""+consumptie.getName());
+        naam.setText(""+nameconsumptie);
 
         TextView price = (TextView) view.findViewById(R.id.beverage_list_item_price);
-        price.setText(""+consumptie.getPrice());
+        price.setText(""+priceconsumptie);
 
         Button removeItem = (Button) view.findViewById(R.id.beverage_list_item_button_remove);
         removeItem.setOnClickListener(new View.OnClickListener() {

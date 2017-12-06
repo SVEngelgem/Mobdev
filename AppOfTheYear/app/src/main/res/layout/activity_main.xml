@@ -19,6 +19,11 @@
     <Button
         android:layout_width="200sp"
         android:layout_height="wrap_content"
+        android:text="@string/main_orderlist"
+        android:id="@+id/buttonOrderList"/>
+    <Button
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
         android:text="@string/main_beverage_list"
         android:id="@+id/buttoneditList"/>
 

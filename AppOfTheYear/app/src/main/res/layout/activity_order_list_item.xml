@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:layoutDirection="rtl">
+
+    <Button
+        android:id="@+id/order_list_item_decrease"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="-"
+        android:layout_gravity="end"/>
+
+    <EditText
+        android:id="@+id/order_list_item_amount"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/order_list_item_increase"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="+" />
+
+    <TextView
+        android:id="@+id/order_list_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAlignment="center"/>
+
+</LinearLayout>

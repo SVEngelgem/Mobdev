@@ -29,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        //naar orderlijst gaan
+        final Button orderListActivityView = (Button)findViewById(R.id.buttonOrderList);
+        orderListActivityView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent j = new Intent(MainActivity.this,OrderListActivity.class);
+                startActivity(j);
+            }
+        });
         /*voor classe te implementren is het nodig om single table inheritance te implementeren
         enkele bronnen hiervoor:
         http://www.techburps.com/jpa/jpa-inheritance-strategy-table-per-hierarchy/47/
