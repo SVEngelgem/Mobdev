@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".BeverageListActivity" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".OrderListActivity"></activity>
+        <activity android:name=".TotalOrderListActivity"></activity>
     </application>
 
 </manifest>

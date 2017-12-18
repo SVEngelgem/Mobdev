@@ -7,28 +7,41 @@ import io.realm.RealmObject;
  */
 
 public class Order extends RealmObject{
-    private Consumptie consumptie;
-    private int amount;
+    private String name;
+    private String locatie;
+    private double totaal;
+    private int order_total_id;
+    private int order_id;
+    private int beverage_id;
+
 
     public Order(){
 
     }
-    public Order(Consumptie consumptie, int amount){
-        this.consumptie = consumptie;
-        this.amount = amount;
-    }
+    //aanmaken van overzicht verschillende orders per klant
+    public Order(String name, String locatie, int order_total_id){
+        this.name = name;
+        this.locatie = locatie;
+        this.order_total_id = order_total_id;
 
-    public Consumptie getConsumptie(){
-        return consumptie;
     }
-    public void setConsumptie(Consumptie consumptie){
-        this.consumptie = consumptie;
+    public String getName(){
+        return name;
     }
-    public int getAmount(){
-        return amount;
+    public void setName(String name){
+        this.name = name;
     }
-    public void setAmount(int amount){
-        this.amount = amount;
+    public String getLocatie(){
+        return locatie;
+    }
+    public void setLocatie(String locatie){
+        this.locatie = locatie;
+    }
+    public int getOrder_total_id(){
+        return order_total_id;
+    }
+    public void setOrder_total_id(int order_total_id){
+        this.order_total_id = order_total_id;
     }
 
 }

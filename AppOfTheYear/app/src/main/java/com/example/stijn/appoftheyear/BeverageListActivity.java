@@ -52,6 +52,7 @@ public class BeverageListActivity extends AppCompatActivity {
                             final String newName = addName.getText().toString();
                             final double newPrice = Double.parseDouble(addPrice.getText().toString());
                             Consumptie consumptie = new Consumptie(newName,newPrice);
+                            //toevoegen van dranken voor bestellijst
                             realm.beginTransaction();
                             realm.copyToRealm(consumptie);
                             realm.commitTransaction();

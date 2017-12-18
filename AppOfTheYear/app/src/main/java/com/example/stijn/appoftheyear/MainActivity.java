@@ -19,6 +19,14 @@ public class MainActivity extends AppCompatActivity {
         //instantieren waar realm nodig is.
         //Realm realm = Realm.getDefaultInstance();
 
+        //naar nieuwe dag orderlijst
+        final Button totalOrderListActivityView = (Button)findViewById(R.id.buttonNewDay);
+        totalOrderListActivityView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent i = new Intent(MainActivity.this, TotalOrderListActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         //naar draklijst gaan
@@ -31,14 +39,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //naar orderlijst gaan
-        final Button orderListActivityView = (Button)findViewById(R.id.buttonOrderList);
-        orderListActivityView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent j = new Intent(MainActivity.this,OrderListActivity.class);
-                startActivity(j);
-            }
-        });
         /*voor classe te implementren is het nodig om single table inheritance te implementeren
         enkele bronnen hiervoor:
         http://www.techburps.com/jpa/jpa-inheritance-strategy-table-per-hierarchy/47/
