@@ -21,13 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
         //naar nieuwe dag orderlijst
         final Button totalOrderListActivityView = (Button)findViewById(R.id.buttonNewDay);
-        totalOrderListActivityView.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent i = new Intent(MainActivity.this, TotalOrderListActivity.class);
-                startActivity(i);
-            }
-        });
-
 
         //naar draklijst gaan
         final Button beverageListActivityView = (Button)findViewById(R.id.buttoneditList);
