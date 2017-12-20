@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:hint="price"/>
+        android:hint="price"
+        android:visibility="visible"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

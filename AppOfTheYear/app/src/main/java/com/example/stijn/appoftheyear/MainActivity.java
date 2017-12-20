@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         //Realm realm = Realm.getDefaultInstance();
 
         //naar nieuwe dag orderlijst
-        final Button totalOrderListActivityView = (Button)findViewById(R.id.buttonNewDay);
+        final Button OrderListActivityView = (Button)findViewById(R.id.buttonNewDay);
+        OrderListActivityView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent i = new Intent(MainActivity.this, OrderListActivity.class);
+                startActivity(i);
+            }
+        });
 
         //naar draklijst gaan
         final Button beverageListActivityView = (Button)findViewById(R.id.buttoneditList);

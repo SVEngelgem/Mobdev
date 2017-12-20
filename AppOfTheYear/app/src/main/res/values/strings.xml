@@ -5,6 +5,8 @@
     <string name="main_beverage_list">Edit Beverage List</string>
     <string name="addbeer">add beverage</string>
     <string name="changebeer">change beverage</string>
-    <string name="add_total_order">Add order</string>
+    <string name="add_order">Add order</string>
+    <string name="title_activity_individual_order">IndividualOrderActivity</string>
+    <string name="title_activity_individual_order_overview">IndividualOrderOverviewActivity</string>
 
 </resources>
