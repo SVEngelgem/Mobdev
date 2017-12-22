@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".BeverageListActivity" />
-        <activity android:name=".OrderActivity" />
         <activity android:name=".OrderListActivity" />
         <activity android:name=".AddOrderActivity"></activity>
     </application>
