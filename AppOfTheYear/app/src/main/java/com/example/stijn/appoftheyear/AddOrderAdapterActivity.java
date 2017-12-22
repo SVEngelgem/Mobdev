@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 
 /**
@@ -29,7 +30,6 @@ public class AddOrderAdapterActivity extends RecyclerView.Adapter<AddOrderAdapte
             myTextView = (TextView) itemView.findViewById(R.id.add_order_grid_item);
             itemView.setOnClickListener(this);
         }
-
         @Override
         public void onClick(View view){
             onItemClick(view, getAdapterPosition());

@@ -28,7 +28,7 @@ public class AddOrderActivity extends AppCompatActivity{
         int numberOfColumns = 6;
         recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
         adapter = new AddOrderAdapterActivity(this, data);
-        adapter.setonClickListener(this);
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
 
