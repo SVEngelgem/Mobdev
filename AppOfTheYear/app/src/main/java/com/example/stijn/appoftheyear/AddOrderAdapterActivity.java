@@ -6,69 +6,65 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import io.realm.Realm;
+import io.realm.OrderedRealmCollection;
+import io.realm.RealmRecyclerViewAdapter;
+import io.realm.RealmResults;
 
 
 /**
  * Created by stijn on 21/12/2017.
  */
+class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOrderAdapterActivity.MyViewHolder>{
 
-public class AddOrderAdapterActivity extends RecyclerView.Adapter<AddOrderAdapterActivity.ViewHolder> {
+    AddOrderAdapterActivity(OrderedRealmCollection<Consumptie> consumpties){
+        super(consumpties, true);
+    }
 
-    private String[] mData = new String[0];
-    private LayoutInflater mInflater;
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.activity_add_order_item, parent, false);
+        return new MyViewHolder(itemView);
+    }
 
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, final int position){
+        final Consumptie consumptiedata = getItem(position);
+        final int nummerlocatie = position+1;
+        holder.data = consumptiedata;
 
-    //opbouwen van de verschillende lissteners
-    //slaagt en recycliert de views als ze van het scherm gaan
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView myTextView;
+        final String consumptieName = consumptiedata.getName();
+        holder.name.setText(consumptieName);
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Toast.makeText(view.getContext(),"dit is positie"+nummerlocatie,Toast.LENGTH_LONG).show();
+            }
+        });
 
-        public ViewHolder(View itemView){
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView name;
+        public Consumptie data;
+
+        MyViewHolder(View itemView) {
             super(itemView);
-            myTextView = (TextView) itemView.findViewById(R.id.add_order_grid_item);
-            itemView.setOnClickListener(this);
-        }
-        @Override
-        public void onClick(View view){
-            onItemClick(view, getAdapterPosition());
+            name = (TextView) itemView.findViewById(R.id.add_order_grid_item_name);
+
         }
     }
-    //data op kliklocatie brengen
-    String getItem(int id) {
-        return mData[id];
-    }
-
-    //constructor
-    public AddOrderAdapterActivity(Context context, String[] data){
-        this.mInflater = LayoutInflater.from(context);
-        this.mData = data;
-    }
-
-    //inflating van de cell
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = mInflater.inflate(R.layout.activity_add_order_item,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
-    }
-
-    //bind de data aan de textview in elke cell
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
-        String iets = mData[position];
-        holder.myTextView.setText(iets);
-    }
-
-    @Override
-    public int getItemCount(){
-        return mData.length;
-    }
-
-    public void onItemClick(View view, int position) {
-        Log.i("TAG", "You clicked number " + getItem(position).toString() + ", which is at cell position " + position);
-    }
-
 }
+

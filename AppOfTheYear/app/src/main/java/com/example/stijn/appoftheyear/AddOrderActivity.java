@@ -7,30 +7,34 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-public class AddOrderActivity extends AppCompatActivity{
+import io.realm.Realm;
+import io.realm.RealmResults;
 
-    AddOrderAdapterActivity adapter;
+public class AddOrderActivity extends AppCompatActivity{
+    private Realm realm;
+    private RecyclerView recyclerView;
+    private AddOrderAdapterActivity adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_order);
-
+        realm = Realm.getDefaultInstance();
+        recyclerView = (RecyclerView) findViewById(R.id.add_order_grid);
 
         //absoluut naar deze link kijken
         //https://stackoverflow.com/questions/40587168/simple-android-grid-example-using-recyclerview-with-gridlayoutmanager-like-the
+        //krijg voorbeeld van link maar niet clickable
 
+        //andere mogelijkheid
+        //http://abhiandroid.com/materialdesign/recyclerview-gridview.html
 
-        // data to populate the RecyclerView with
-        String[] data = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        SetupRecyclerView();
 
-        // set up the RecyclerView
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.add_order_grid);
-        int numberOfColumns = 6;
-        recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-        adapter = new AddOrderAdapterActivity(this, data);
-        adapter.setClickListener(this);
+    }
+    private void SetupRecyclerView(){
+        adapter = new AddOrderAdapterActivity(realm.where(Consumptie.class).findAll());
+        recyclerView.setLayoutManager(new GridLayoutManager(this,4));
         recyclerView.setAdapter(adapter);
-
-
     }
 }
