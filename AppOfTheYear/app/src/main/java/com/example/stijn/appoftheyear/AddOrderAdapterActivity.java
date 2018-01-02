@@ -28,8 +28,14 @@ import io.realm.RealmResults;
  */
 class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOrderAdapterActivity.MyViewHolder>{
 
-    AddOrderAdapterActivity(OrderedRealmCollection<Consumptie> consumpties){
+    public interface OnItemClickListener {
+        void onItemClick(Consumptie consumptie);
+    }
+    private final OnItemClickListener listener;
+
+    AddOrderAdapterActivity(OrderedRealmCollection<Consumptie> consumpties , OnItemClickListener listener){
         super(consumpties, true);
+        this.listener = listener;
     }
 
     @Override
@@ -40,17 +46,20 @@ class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOr
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position){
+    public void onBindViewHolder(final MyViewHolder holder, final int position){
         final Consumptie consumptiedata = getItem(position);
         final int nummerlocatie = position+1;
         holder.data = consumptiedata;
 
         final String consumptieName = consumptiedata.getName();
+        final double consumptiePrice = consumptiedata.getPrice();
         holder.name.setText(consumptieName);
+        holder.price.setText(""+consumptiePrice);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(view.getContext(),"dit is positie"+nummerlocatie,Toast.LENGTH_LONG).show();
+                /*Toast.makeText(view.getContext(),"dit is positie"+nummerlocatie,Toast.LENGTH_LONG).show();*/
+                listener.onItemClick(consumptiedata);
             }
         });
 
@@ -58,13 +67,16 @@ class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOr
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
+        TextView price;
         public Consumptie data;
 
         MyViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.add_order_grid_item_name);
-
+            price = (TextView) itemView.findViewById(R.id.add_order_grid_item_price);
         }
     }
+
+
 }
 

@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".BeverageListActivity" />
         <activity android:name=".OrderListActivity" />
-        <activity android:name=".AddOrderActivity"></activity>
+        <activity android:name=".AddOrderActivity"
+            android:windowSoftInputMode="stateHidden"/>
+
+
     </application>
 
 </manifest>

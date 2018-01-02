@@ -25,13 +25,14 @@ public class OrderListActivity extends AppCompatActivity {
         final RealmResults<Order> orders = realm.where(Order.class).findAll();
 
 
-        ListView beverageListView = (ListView)findViewById(R.id.order_list);
-
+        ListView orderListView = (ListView)findViewById(R.id.order_list);
+        orderListView.setAdapter(new OrderListAdapterActivity(this, orders));
 
         Button button_add = (Button)findViewById(R.id.order_list_add);
         button_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Order order = new Order();
                 Intent i = new Intent(OrderListActivity.this, AddOrderActivity.class);
                 startActivity(i);
             }

@@ -5,11 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.stijn.appoftheyear.AddOrderActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_gravity="end">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/add_order_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="clear"/>
+        <Button
+            android:id="@+id/add_order_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="accept"/>
+        <TextView
+            android:id="@+id/add_order_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/add_order_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/add_order_id"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:hint="ordername" />
+        <TextView
+            android:id="@+id/add_order_overzichtlijst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="9" />
+    </LinearLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/add_order_grid"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
     </android.support.v7.widget.RecyclerView>
