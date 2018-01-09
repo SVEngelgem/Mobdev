@@ -19,10 +19,10 @@
         </activity>
         <activity android:name=".BeverageListActivity" />
         <activity android:name=".OrderListActivity" />
-        <activity android:name=".AddOrderActivity"
-            android:windowSoftInputMode="stateHidden"/>
-
-
+        <activity
+            android:name=".AddOrderActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".OrderViewActivity"></activity>
     </application>
 
 </manifest>

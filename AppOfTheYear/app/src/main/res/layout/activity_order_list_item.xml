@@ -6,23 +6,39 @@
     android:orientation="horizontal"
     android:id="@+id/order_list_item_totaal"
     android:textAlignment="center">
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/order_list_item_number" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/order_list_item_name"
-        android:hint="name"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/order_list_item_price"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_list_item_number" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_list_item_name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_list_item_price"/>
+    </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/order_list_item_payed"
-        android:text="payed"/>
+        android:text="@string/payed_not"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/order_list_item_overview"
+        android:text="Overview"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/order_list_item_remove"
+        android:text="Remove"/>
+
 
 </LinearLayout>

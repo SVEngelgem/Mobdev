@@ -49,6 +49,7 @@ public class BeverageListArrayAdapter extends ArrayAdapter<Consumptie>{
                 realm.commitTransaction();
                 notifyDataSetChanged();
 
+
             }
         });
 

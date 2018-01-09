@@ -6,7 +6,11 @@
     <string name="addbeer">add beverage</string>
     <string name="changebeer">change beverage</string>
     <string name="add_order">Add order</string>
+    <string name="remove_order">Clear orders</string>
     <string name="title_activity_individual_order">IndividualOrderActivity</string>
     <string name="title_activity_individual_order_overview">IndividualOrderOverviewActivity</string>
+    <string name="payed">payed</string>
+    <string name="payed_not">NOT payed</string>
+
 
 </resources>

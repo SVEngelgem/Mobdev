@@ -6,13 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import javax.annotation.Nullable;
+
+import io.realm.ObjectChangeSet;
 import io.realm.Realm;
+import io.realm.RealmChangeListener;
+import io.realm.RealmObjectChangeListener;
 import io.realm.RealmResults;
+
 
 public class OrderListActivity extends AppCompatActivity {
 
@@ -25,8 +32,11 @@ public class OrderListActivity extends AppCompatActivity {
         final RealmResults<Order> orders = realm.where(Order.class).findAll();
 
 
-        ListView orderListView = (ListView)findViewById(R.id.order_list);
+
+
+        final ListView orderListView = (ListView)findViewById(R.id.order_list);
         orderListView.setAdapter(new OrderListAdapterActivity(this, orders));
+
 
         Button button_add = (Button)findViewById(R.id.order_list_add);
         button_add.setOnClickListener(new View.OnClickListener() {
@@ -37,5 +47,6 @@ public class OrderListActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 }

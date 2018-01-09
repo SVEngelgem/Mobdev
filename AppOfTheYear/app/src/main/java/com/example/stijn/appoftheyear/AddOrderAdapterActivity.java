@@ -38,6 +38,8 @@ class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOr
         this.listener = listener;
     }
 
+
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -60,6 +62,7 @@ class AddOrderAdapterActivity extends RealmRecyclerViewAdapter<Consumptie, AddOr
             public void onClick(View view){
                 /*Toast.makeText(view.getContext(),"dit is positie"+nummerlocatie,Toast.LENGTH_LONG).show();*/
                 listener.onItemClick(consumptiedata);
+
             }
         });
 

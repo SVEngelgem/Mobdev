@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="payed">#3ae827</color>
+    <color name="grey">#cccccc</color>
 </resources>
